@@ -1,0 +1,12 @@
+Datos del usuario (pais, juegos que compro, etc)
+
+historial de las cosas que el usuario a hecho en su cuenta
+
+Preparar el juego antes de (por ejemplo en el juego de las cartas, elegir cuales
+seran las preguntas que tienen que salir)
+
+Cada juego tiene su distinto mazo de cartas
+Validar la preparacion del juego antes de
+
+
+Se genera link con el juego pre armado

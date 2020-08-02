@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <!--  Bootstrap   -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- HTML2Canvas   -->
+  <script type="text/javascript" src="js/html2canvas.js"></script>
+  <!--  Konva Drag and drop   -->
+  <script src="https://unpkg.com/konva@7.0.4/konva.min.js"></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+      crossorigin="anonymous"
+    ></script>
+  <meta charset="utf-8" />
+  <title>TrukiJuegos</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img style="width: 100px;" src="./img/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+
+  <br>
+
+
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <div class="row">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+              aria-controls="pills-home" aria-selected="true">¿Como eres?</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+              aria-controls="pills-profile" aria-selected="false">Expresiones</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+              aria-controls="pills-contact" aria-selected="false">Sensaciones</a>
+          </li>
+        </ul>
+      </div>
+      <p>
+        Arrastra las imagenes y luego sueltalas
+      </p>
+
+      <div id="drag-items">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <img src="/img/TrukiEmociones/cara_niña2.png" draggable="true" />
+            <img src="/img/TrukiEmociones/cara_niño2.png" draggable="true" />
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <img src="/img/TrukiEmociones/elementos_juego-07.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-08.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-09.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-10.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-11.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-12.png" draggable="true" />
+          </div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <img src="/img/TrukiEmociones/elementos_juego-01.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-02.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-03.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-04.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-05.png" draggable="true" />
+            <img src="/img/TrukiEmociones/elementos_juego-06.png" draggable="true" />
+          </div>
+        </div>
+
+
+
+      </div>
+      <br>
+      <hr>
+      <button class="btn btn-primary" id="download">Tomar</button>
+      <button class="btn btn-primary" id="save">Guardar como PDF</button>
+    </div>
+
+    <div class="col-md-8">
+      <div id="container"></div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <!-- Script -->
+  <script src="index.js"></script>
+
+
+</body>
+
+</html>
